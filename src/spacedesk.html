@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html manifest="app.manifest">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>spacedesk viewer</title>
+  <meta http-equiv="Cache-control" content="no-cache">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta http-equiv="cleartype" content="on">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=10">
+  <meta name="apple-mobile-web-app-title" content="spacedesk">
+  <meta name="description"
+    content="spacedesk expands the Windows desktop computer screen to other computers over the local area network.">
+  <meta name="keywords"
+    content="spacedesk, windows desktop, desktop cloning, desktop duplication, desktop mirroring, desktop extension, extend desktop, maxivista, maxivista alternative, airdisplay, airdisplay alternative, Squirrels, AirParrot, AirParrot 2, AirParrot Alternative, Air, Air Alternative, Wifi, kvm, network display, monitor software, network monitor, windows display, display cloning, display mirroring, mirror display, windows aero, windows 8 display, multi montior, zonescreen, zone screen">
+  <meta name="copyright" content="datronicsoft">
+  <meta name="author" content="David Golovin">
+  <meta name="robots" content="index, follow">
+  <meta property="og:description"
+    content="spacedesk expands the Windows desktop computer screen to other computers over the local area network.">
+  <meta property="og:title" content="spacedesk">
+  <meta property="og:site_name" content="spacedesk">
+  <meta property="og:url" content="https://www.facebook.com/pages/Spacedesk/330909083726073">
+  <meta property="og:image" content="img/Logo.png">
+  <link rel="apple-touch-icon" href="img/icon_ios.png" type="image/x-icon">
+  <link href="img/favicon.ico" rel="icon" type="image/x-icon">
+  <style type="text/css">
+    #start {
+      background-color: #6823a1;
+    }
+  </style>
+  <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="windows desktop">
+  <div id="start">
+    <div class="vertical-center">
+      <main>
+        <div class="container">
+          <section id="loader" style="display: none;">
+            <div class="loading-ball">
+              <div></div>
+            </div>
+          </section>
+          <section id="form-input" class="animated" style="display: block;">
+            <header>
+              <img id="icon" data-src="img/logo-icon@2x.png" data-src2x="img/logo-icon@2x.png"
+                data-animation="img/logo-icon-animation@2x.gif" data-animation2x="img/logo-icon-animation@2x.gif"
+                class="retina nowidth" src="img/logo-icon@2x.png">
+              <img id="logo" src="img/Logo.png" class="retina nowidth">
+            </header>
+            <div id="errorWrapper" style="display: none">
+              <p id="errorText"></p><a href="javascript:location.reload();" class="input-button-large">Retry</a>
+            </div>
+            <div id="broadcast" style="display:none" class="hide-on-connect">
+              <p class="description"><span class="loading-ball"><span class="spinner"></span> </span>Searching
+                spacedesk server</p>
+              <div id="broadcastlist"></div><a id="enterself" href="#">Connect
+                by entering address</a>
+            </div>
+            <div id="input">
+              <p class="description hide-on-connect">Please enter your primary-PC network address</p><input id="server"
+                name="server" type="text" class="input-text hide-on-connect" placeholder="Server" required=""
+                value="192.168.1.1">
+              <a id="buttonLogin" class="input-button-large">Connect</a>
+              <p class="hide-on-connect" style="display: block;">
+                <a class="showsettings">Performance Settings</a>
+              </p>
+              <p class="hide-on-connect"><a id="help-me">Need help?</a> <span id="rotationInfo"><i
+                    class="material-icons"></i>
+                  For best use, go in Landscape Mode!</span></p><br><br><br>
+              <p class="warning">
+                <span>ATTENTION: This VIEWER only connects to spacedesk Windows DRIVER version Beta III v0.9.9z.62 or
+                  above!</span>
+              </p>
+              <p class="show-on-connect"><a id="reload" class="reloadPage">Cancel</a></p>
+            </div>
+          </section>
+          <section id="help" class="animated">
+            <div class="wizard">
+              <section id="step-start" class="animated active" data-closeable="true">
+                <h2>Hello!</h2>
+                <p class="lead"><br>This Guide will help you to connect basicview with your spacedesk
+                  server.<br><br><a href="#step-tray" style="text-decoration:none" class="input-button-large">Ok,
+                    let's do this!</a></p>
+              </section>
+              <section id="step-tray" class="animated" data-closeable="true">
+                <p class="help-text"><img src="img/help-tray.jpg" class="help"><br>First click on the
+                  spacedesk-Icon<br>in the tray of your PC (lower right).<br><br>A new Window
+                  appears. Now Click on 'About...'<br><br><a href="#step-about" style="text-decoration:none"
+                    class="input-button-large">Next</a></p>
+              </section>
+              <section id="step-about" class="animated" data-closeable="true">
+                <p class="help-text"><img src="img/help-about.jpg" class="help"><br>Look for your
+                  IP-Address in the lower section.<br>Usually your IP starts with 192.168...<br><br><a
+                    href="#step-insert" style="text-decoration:none" class="input-button-large">Next</a></p>
+              </section>
+              <section id="step-insert" class="animated" data-closeable="false">
+                <h2>Hurray!</h2>
+                <p class="lead"><br><br>Now put your IP-Address in the textbox below and press the
+                  connect button.<br><br><a href="#close" style="text-decoration:none" class="input-button-large">Done
+                    !</a></p>
+              </section>
+              <div class="close"><i class="material-icons"></i></div>
+            </div>
+          </section>
+          <section id="settings" class="animated">
+            <h3><i class="material-icons md-48"></i>Image Compression Quality</h3>
+            <div class="section">
+              <div class="compression">
+                <div class="span2">Fast speed<br>Low Quality</div>
+                <div class="span8"><input id="rangeQuality" name="quality" type="range" min="0" max="100" step="10"
+                    value="70" style="min-height:30px">
+                  <div style="width:70%; text-align:right; cursor:default"><span title="default Value">|</span></div>
+                </div>
+                <div class="span2">Slow speed<br>High Quality</div>
+              </div>
+            </div>
+            <h3><i class="material-icons md-48"></i>Color Depth (Chroma Downsampling)</h3>
+            <div class="section">
+              <div class="colordepth">
+                <div class="radio"><label><input type="radio" name="subsampling" id="subsampling420" value="2">&nbsp;Low
+                    color quality, fast speed (YUV 4.2.0)</label>&nbsp;<span class="text-muted small">(Default)</span>
+                </div>
+                <div class="radio"><label><input type="radio" name="subsampling" id="subsampling422"
+                      value="1">&nbsp;Medium
+                    color quality, medium speed (YUV 4.2.2)</label></div>
+                <div class="radio"><label><input type="radio" name="subsampling" id="subsampling444"
+                      value="0">&nbsp;High
+                    color quality, slow speed (YUV 4.4.4)</label></div>
+              </div>
+            </div>
+            <h3><i class="material-icons md-48"></i>Custom Framerate</h3>
+            <div class="section">
+              <div class="framerates">
+                <div class="radio"><label><input type="radio" name="framerate" id="fps30" value="0">&nbsp;30
+                    FPS</label>&nbsp;<span class="text-muted small">(Default)</span></div>
+                <div class="radio"><label><input type="radio" name="framerate" id="fps60" value="1">&nbsp;60
+                    FPS</label></div>
+              </div>
+            </div>
+            <h3><i class="material-icons md-48"></i>Screen Resolution</h3>
+            <div class="section">
+              <div class="resolution">
+                <p class="input-checkbox"><label><input id="checkboxClientResolution" type="checkbox"
+                      name="clientResolution" checked="checked"> Use Client Resolution (for
+                    Extension): <span id="resolutionSettings">1500x1000</span></label></p>
+                <p class="input-checkbox"><label><input id="checkboxCustomResolution" type="checkbox"
+                      name="customResolution" checked="checked"> Use Custom Resolution (for
+                    Duplication):</label></p>
+                <p><input id="customResX" width="50" name="customResX" type="number" onkeydown="return false"
+                    maxlength="4" value="1024"><label>&nbsp;&nbsp;x&nbsp;&nbsp;</label><input id="customResY" width="50"
+                    name="customResX" type="number" onkeydown="return false" maxlength="4" value="768"><select
+                    name="customResolution" id="customResolution" title="Choose possible resolutions here..."
+                    class="form-control">
+                    <option value="0">Resolutions...</option>
+                    <option value="1">800x600</option>
+                    <option value="2">1024x600</option>
+                    <option value="3">1024x768</option>
+                    <option value="4">1152x864</option>
+                    <option value="5">1280x720</option>
+                    <option value="6">1280x768</option>
+                    <option value="7">1280x800</option>
+                    <option value="8">1280x960</option>
+                    <option value="9">1280x1024</option>
+                    <option value="10">1360x768</option>
+                    <option value="11">1366x768</option>
+                    <option value="12">1400x1050</option>
+                    <option value="13">1440x900</option>
+                    <option value="14">1600x900</option>
+                    <option value="15">1600x1200</option>
+                    <option value="16">1680x1050</option>
+                    <option value="17">1920x1080</option>
+                    <option value="18">1920x1200</option>
+                    <option value="19">2048x1152</option>
+                    <option value="20">2560x1440</option>
+                    <option value="21">2560x1600</option>
+                    <option value="22">2560x1920</option>
+                    <option value="23">3840x2160</option>
+                    <option value="24">4096x2160</option>
+                  </select><br></p>
+                <p></p>
+                <p class="input-checkbox"><label><input id="checkboxFullscreen" type="checkbox" name="fullscreen">Go
+                    Fullscreen</label></p>
+                <div style="display:none"><input id="checkboxStretchScreen" type="checkbox" name="stretch"></div>
+              </div>
+            </div>
+            <h3><i class="material-icons md-48"></i>Remote Control</h3>
+            <div class="section">
+              <p id="checkboxMouse" class="input-checkbox"><label><input id="checkboxKVM" type="checkbox" name="kvm">
+                  Enable Mouse Control / Enable Touchpad</label></p>
+              <p id="checkboxKeyboard" style="display:none" class="input-checkbox"><label><input
+                    id="checkboxKVMKeyboard" type="checkbox" name="kvm"> Enable Keyboard Control</label></p>
+              <p class="input-checkbox mobileOnly"><label><input id="checkboxKVMTouchAbsolute" type="checkbox"
+                    name="kvmabsolute">
+                  Use Absolute Touch Position (Touchscreen)</label></p>
+            </div>
+            <div class="section">
+              <hr><a id="clearSettings" style="text-decoration:none" class="link">Clear Settings</a>
+            </div>
+            <div id="savePanel"><a id="apply" class="applysettings input-button-large inline"
+                style="margin-top:20px">Apply</a>
+              <a id="cancel" class="abortsettings input-button-large inline" style="margin-top:20px">Cancel</a>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer style="display: block;">
+        <p class="hide-on-connect">spacedesk HTML5 VIEWER v0.9.9z.63 • datronicsoft •</p>
+        <p id="version" class="hide-on-connect"></p>
+        <script src="browserify-get-version.js"></script>
+      </footer>
+    </div>
+  </div>
+  <div id="center-stage" class="hide">
+    <main>
+      <div id="canvas-wrapper"><canvas id="viewCanvas" width="1500" height="1000" style="display: block"
+          class="upscaleX upscaleY"></canvas><a id="toggleMenu" class="sliding-panel-button"><i
+            class="material-icons"></i></a>
+        <section id="fakeKeyboard" class="showKeyboard"><input id="keyboard" type="text" autocomplete="off"
+            autocorrect="off" autocapitalize="off" spellcheck="false"> <a id="showKeyboard" class="showKeyboard"><i
+              id="keyboardIcon" class="material-icons"></i></a></section>
+      </div>
+    </main>
+    <div class="sliding-panel-fade-screen"></div>
+    <aside id="menu" class="sliding-panel-content">
+      <header><img id="menu-logo" data-src="img/Logo.png" class="retina nowidth" src="img/Logo@2x.png"></header>
+      <nav>
+        <ul>
+          <li><a class="showsettings_" href="#"><i class="material-icons"></i>Settings</a></li>
+          <li><a class="togglefullscreen" href="#"><i class="material-icons"></i>Enter
+              Fullscreen</a></li>
+          <li><a class="togglekvm" href="#"><i class="material-icons"></i>Mouse
+              Control</a></li>
+          <li><a class="showKeyboard" href="#"><i class="material-icons"></i>Show
+              Keyboard</a></li>
+          <li class="seperator"></li>
+          <li><a class="reconnect" href="#"><i class="material-icons"></i>Reconnect</a></li>
+          <li><a class="closeConnection" href="#"><i class="material-icons"></i>Close</a></li>
+        </ul>
+      </nav>
+      <footer>
+        <p id="menustatus"><span id="connectionStatus">Not Connected</span> <a id="generateStaticLink"
+            href="#staticlink" title="Autoconnect with spacedesk"><i class="material-icons md-18"></i></a></p>
+        <p id="desktopSize">1500 x 1000 (0 x 0 scaled)</p>
+      </footer>
+    </aside>
+  </div>
+  <div id="settingsChangedReload" class="modal" role="dialog"><input class="modal-state" id="modalSettingsReload"
+      type="checkbox">
+    <div class="modal-fade-screen">
+      <div class="modal-inner">
+        <div class="modal-close" for="modalSettingsReload"></div>
+        <h1>You are already connected!</h1>
+        <p class="modal-intro">Your settings will be applied the next time you connect.</p><a
+          class="input-button-large success reconnect">Reconnect
+          now!</a> <a class="input-button-large inverted noreconnect">No not now.</a>
+      </div>
+    </div>
+  </div>
+  <div id="orientationChanged" class="modal" role="dialog"><input class="modal-state" id="modalOrientationChanged"
+      type="checkbox">
+    <div class="modal-fade-screen">
+      <div class="modal-inner">
+        <div class="modal-close" for="modalOrientationChanged"></div>
+        <h1>Screen rotated!</h1>
+        <p class="modal-intro">To apply the new Screen Resolution, you must reconnect.</p><a
+          class="input-button-large success reconnect">Reconnect</a>
+        <a class="input-button-large inverted noreconnect">No not now.</a>
+      </div>
+    </div>
+  </div>
+  <div id="staticLink" class="modal" role="dialog"><input class="modal-state" id="modalStaticLink" type="checkbox">
+    <div class="modal-fade-screen">
+      <div class="modal-inner">
+        <div class="modal-close" for="modalStaticLink"></div>
+        <h1>Autoconnect with spacedesk</h1>
+        <p class="modal-intro">You can save the connection, by using the following Url.</p><textarea id="staticUrl"
+          readonly="readonly">                </textarea><label class="input-button-large inverted"
+          for="modalStaticLink">Close</label>
+      </div>
+    </div>
+  </div>
+  <div id="notsupported">
+    <div class="inner"><img src="img/Logo.png">
+      <h1>We're really sorry, but...</h1>
+      <div class="errorText">
+        <p>It looks like you're using an old Browser that doesn't support the new HTML5 Features.</p>
+        <p>Please use a modern Browser like Chrome, FireFox, etc..</p>
+      </div>
+    </div>
+  </div>
+  <script src="spacedesk.min.js" type="text/javascript" async=""></script>
+</body>
+
+</html>
