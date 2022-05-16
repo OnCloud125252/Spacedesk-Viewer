@@ -15,7 +15,7 @@
     "build": "electron-builder -wl"
   },
   "keywords": [],
-  "author": "alex",
+  "author": "alex <anonymousaaaa41414141@gmail.com>",
   "license": "MIT",
   "config": {
     "forge": {
@@ -81,7 +81,8 @@
       "icon": "icons/spacedesk.png"
     },
     "linux": {
-      "icon": "icons/spacedesk.png"
+      "icon": "icons/spacedesk.png",
+      "target": ["deb", "rpm"]
     }
   }
 }
