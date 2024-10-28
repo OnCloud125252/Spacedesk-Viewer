@@ -2,7 +2,11 @@
 
 A spacedesk client that can be used offline
 
-> ### Resources from [Liumeo](https://github.com/eagleoflqj "Liumeo's github page"),  Big thanks to him !
+> Resources from [Liumeo](https://github.com/eagleoflqj "Liumeo's github page"),  Big thanks to him !
+
+> [!IMPORTANT]\
+> Unfortunately I haven't update this program for a long time so many of the dependencies are ***VERY*** outdated, that means it's nearly impossible to update the current program. I will consider rewriting whole program in the near future. Please be patient and wait for the update!
+
 
 ## Description
 
