@@ -47,6 +47,10 @@ npm run start
   + supports
     + Windows
     + Linux (`Debian`, `Ubuntu`, `Red Hat`, `Fedora`, `SUSE`)
+  
+  + or by installing it locally (see the chapter "How to run this software with my own settings ?")
+
+# Otherwise you can use the default installation without my custom settings :
 
 # Installation
 
