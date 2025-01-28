@@ -185,6 +185,13 @@
                 <p></p>
                 <p class="input-checkbox"><label><input id="checkboxFullscreen" type="checkbox" name="fullscreen">Go
                     Fullscreen</label></p>
+                    <script>
+                      const { ipcRenderer } = require('electron');
+                    
+                      document.getElementById('checkboxFullscreen').addEventListener('change', (event) => {
+                        ipcRenderer.send('toggle-fullscreen', event.target.checked);
+                      });
+                    </script>
                 <div style="display:none"><input id="checkboxStretchScreen" type="checkbox" name="stretch"></div>
               </div>
             </div>
@@ -233,6 +240,13 @@
           <li><a class="showsettings_" href="#"><i class="material-icons"></i>Settings</a></li>
           <li><a class="togglefullscreen" href="#"><i class="material-icons"></i>Enter
               Fullscreen</a></li>
+              <script>
+                const { ipcRenderer } = require('electron');
+              
+                document.getElementById('toggleFullscreenButton').addEventListener('click', () => {
+                  ipcRenderer.send('toggle-fullscreen');
+                });
+              </script>
           <li><a class="togglekvm" href="#"><i class="material-icons"></i>Mouse
               Control</a></li>
           <li><a class="showKeyboard" href="#"><i class="material-icons"></i>Show

@@ -1,6 +1,6 @@
 # Spacedesk-Viewer
 
-A spacedesk client that can be used offline
+My own settings for the spacedesk client that can be used offline
 
 > Resources from [Liumeo](https://github.com/eagleoflqj "Liumeo's github page"),  Big thanks to him !
 
@@ -19,6 +19,24 @@ This project is an adaption of [spacedesk-HTML5-VIEWER](http://spacedesk.ph/html
 + Remove google-analytics part
 + Localize all resources and rearrange them
 + Beautify the interface
++ Fix a bug with the fullscreen feature
+
+# How to run this software with my own settings ?
+## I suggest that you use this software by installing it locally
+```
+git clone https://github.com/clovislfbv/Spacedesk-Viewer.git
+cd Space-Viewer
+```
+
+## Then install the packages needed
+```
+npm install
+```
+
+## Finally run the software with
+```
+npm run start
+```
 
 # Requirement
 
