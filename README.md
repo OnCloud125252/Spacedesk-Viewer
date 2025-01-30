@@ -25,7 +25,7 @@ This project is an adaption of [spacedesk-HTML5-VIEWER](http://spacedesk.ph/html
 ## I suggest that you use this software by installing it locally
 ```
 git clone https://github.com/clovislfbv/Spacedesk-Viewer.git
-cd Space-Viewer
+cd Spacedesk-Viewer
 ```
 
 ## Then install the packages needed
