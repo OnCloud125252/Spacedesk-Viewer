@@ -1,6 +1,6 @@
 console.time();
 
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, screen } = require('electron');
 const path = require('path');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -10,17 +10,18 @@ if (require('electron-squirrel-startup')) {
 }
 
 const createWindow = () => {
+  // Get the primary display's size
+  const { width, height } = screen.getPrimaryDisplay().workAreaSize;
+
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     icon: __dirname + '/img/favicon.ico',
     show: false,
-    minWidth: 950,
-    minHeight: 700,
-    width: 950,
-    height: 700,
+    width: width,
+    height: height,
     frame: true,
-    trasparent: true,
-    resizable: false,
+    transparent: true,
+    resizable: true,
   });
 
   // and load the index.html of the app.
@@ -52,6 +53,13 @@ app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
   };
+});
+
+// Listen for the toggle-fullscreen message
+ipcMain.on('toggle-fullscreen', (event, isFullscreen) => {
+  if (mainWindow) {
+    mainWindow.setFullScreen(isFullscreen);
+  }
 });
 
 // In this file you can include the rest of your app's specific main process
